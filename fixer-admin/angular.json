@@ -64,7 +64,8 @@
               "browserTarget": "fixer-admin:build:production"
             },
             "development": {
-              "browserTarget": "fixer-admin:build:development"
+              "browserTarget": "fixer-admin:build:development",
+              "proxyConfig": "./proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
