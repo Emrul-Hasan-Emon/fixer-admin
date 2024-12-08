@@ -1,7 +1,8 @@
 .dashboard-container {
     display: flex;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 80px); /* Adjust height based on header height */
     background-color: #f8f9fa;
+    margin-top: 80px; /* Ensure the dashboard content starts below the header */
 }
 
 .sidebar {
@@ -9,6 +10,10 @@
     background: linear-gradient(180deg, #2c3e50 0%, #3498db 100%);
     color: white;
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Keep the sidebar fixed */
+    top: 80px; /* Start below the header */
+    bottom: 0;
+    overflow-y: auto;
 }
 
 .sidebar-header {
@@ -52,6 +57,8 @@
     flex: 1;
     padding: 2rem;
     overflow-y: auto;
+    margin-left: 280px; /* Account for sidebar width */
+    margin-top: 80px; /* Ensure main content starts below the header */
 }
 
 .content-header {

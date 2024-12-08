@@ -11,7 +11,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 
 const routes: Routes = [
   {
-    path: "", component: AdminComponent
+    path: "", component: WelcomeComponent
   },
   {
     path: "login", component: LoginComponent
@@ -30,9 +30,6 @@ const routes: Routes = [
   },
   {
     path: "tasks", component: TaskComponent
-  },
-  {
-    path: "welcome", component: WelcomeComponent
   }
 ];
 
