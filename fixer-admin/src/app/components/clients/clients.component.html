@@ -1,1 +1,13 @@
-<p>clients works!</p>
+<div class="clients-container">
+    <h2 class="title">Clients</h2>
+    <div class="clients-list">
+        <div class="client-card" *ngFor="let client of clients">
+            <div class="client-info">
+                <p class="client-id">Client ID: {{ client.id }}</p>
+                <p class="client-name">Name: {{ client.name }}</p>
+                <p class="client-gender">Gender: {{ client.gender }}</p>
+            </div>
+            <button class="details-button" (click)="seeDetails(client.id)">See Details</button>
+        </div>
+    </div>
+</div>
