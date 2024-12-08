@@ -3,11 +3,12 @@
     <div class="clients-list">
         <div class="client-card" *ngFor="let client of clients">
             <div class="client-info">
-                <p class="client-id">Client ID: {{ client.id }}</p>
-                <p class="client-name">Name: {{ client.name }}</p>
-                <p class="client-gender">Gender: {{ client.gender }}</p>
+                <p class="client-id"><b>Client ID</b>: {{ client.client_id }}</p>
+                <p class="client-name"><b>Name</b>: {{ getFullName(client) }}</p>
+                <p class="client-city"><b>City</b>: {{ client.city }} </p>
+                <p class="client-gender"><b>Gender</b>: {{ client.gender }}</p>
             </div>
-            <button class="details-button" (click)="seeDetails(client.id)">See Details</button>
+            <button class="details-button" (click)="seeDetails(client)">See Details</button>
         </div>
     </div>
 </div>
