@@ -11,7 +11,7 @@
               [class.active]="selectedMenu === item"
               (click)="selectMenu(item)"
               class="sidebar-item">
-            <a [routerLink]="item.route" class="sidebar-link">
+            <a class="sidebar-link">
               <i [class]="'fas fa-' + item.icon"></i>
               <span>{{ item.title }}</span>
             </a>
