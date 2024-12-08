@@ -8,6 +8,7 @@ import { NewFixersComponent } from './components/new-fixers/new-fixers.component
 import { RegisteredFixersComponent } from './components/registered-fixers/registered-fixers.component';
 import { TaskComponent } from './components/task/task.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ClientDetailsComponent } from './components/client-details/client-details.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,9 @@ const routes: Routes = [
   },
   {
     path: "tasks", component: TaskComponent
+  },
+  {
+    path: "client-details", component: ClientDetailsComponent
   }
 ];
 
