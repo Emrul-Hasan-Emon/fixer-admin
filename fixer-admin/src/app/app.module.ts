@@ -8,6 +8,11 @@ import { RegisteredFixersComponent } from './components/registered-fixers/regist
 import { ClientsComponent } from './components/clients/clients.component';
 import { TaskComponent } from './components/task/task.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,16 @@ import { ProposalComponent } from './components/proposal/proposal.component';
     RegisteredFixersComponent,
     ClientsComponent,
     TaskComponent,
-    ProposalComponent
+    ProposalComponent,
+    AdminComponent,
+    LoginComponent,
+    DashboardComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
