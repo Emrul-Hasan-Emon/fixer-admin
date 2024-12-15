@@ -1,24 +1,34 @@
 <div class="client-details-container">
     <h2 class="details-title">Client Details</h2>
     <div class="client-info">
-        <p><strong>Client ID:</strong> 674cac225c13112c2b72701d</p>
-        <p><strong>Full Name:</strong> Tanvir Ahmed</p>
-        <p><strong>Phone Number:</strong> 01700000002</p>
-        <p><strong>Date of Birth:</strong> {{ 1996-08-14 | date: 'longDate' }}</p>
-        <p><strong>City:</strong> Karachi</p>
-        <p><strong>Gender:</strong> Male</p>
-        <p><strong>Created At:</strong> {{ '2024-12-02 00:34:10' | date: 'medium' }}</p>
+        <ng-container *ngIf="client">
+            <p><strong>Client ID:</strong> {{ client.client_id }} </p>
+            <p><strong>Full Name:</strong> {{ getFullName(client) }} </p>
+            <p><strong>Phone Number:</strong> {{ client.phone_number }} </p>
+            <p><strong>Date of Birth:</strong> {{ client.dob| date: 'longDate' }}</p>
+            <p><strong>City:</strong> {{ client.city }} </p>
+            <p><strong>Gender:</strong> {{ client.gender }} </p>
+            <p><strong>Created At:</strong> {{ client.created_at| date: 'medium' }}</p>
+        </ng-container>
+        <ng-container *ngIf="client == undefined">
+            <b>No Client is Present</b>
+        </ng-container>
     </div>
 
     <h3 class="tasks-title">Tasks</h3>
     <div class="tasks-list">
-        <div class="task-card" *ngFor="let task of p">
-            <p><strong>Task ID:</strong> 32987493857984375 </p>
-            <p><strong>Task Name:</strong> Task </p>
-            <p><strong>Task Status:</strong> Open </p>
-            <button class="task-details-button">See Task Details</button>
+        <div class="task-card" *ngFor="let task of clientTasks">
+            <p><strong>Task ID:</strong> {{ task.task_id }} </p>
+            <p><strong>Task Name:</strong> {{ task.title }} </p>
+            <p><strong>Task Status:</strong> {{ task.status }} </p>
+            <button class="task-details-button" (click)="seeTaskDetails(task)">See Task Details</button>
             <hr>
         </div>
+        <ng-container>
+            <div class="task-card" *ngIf="clientTasks.length == 0">
+                <p><strong>No task is present</strong></p>
+            </div>
+        </ng-container>
     </div>
 
     <button class="back-button" (click)="goBack()">Back</button>
