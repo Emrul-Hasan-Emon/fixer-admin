@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Client } from 'src/app/models/clients';
 import { ClientService } from 'src/app/services/client/client.service';
 
@@ -8,7 +9,10 @@ import { ClientService } from 'src/app/services/client/client.service';
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-  constructor(private clientService: ClientService) {}
+  constructor(
+    private clientService: ClientService,
+    private router: Router
+  ) {}
   clients: Client[] = [];
 
   ngOnInit(): void {
@@ -43,8 +47,8 @@ export class ClientsComponent implements OnInit {
     }
   }
 
-  seeDetails(clientId: Client) {
-    // Logic to show client details later on
-    console.log('See details for Client ID:', clientId);
+  seeDetails(client: Client) {
+    this.clientService.publishClientInformation(client);
+    this.router.navigate(['client-details']);
   }
 }
