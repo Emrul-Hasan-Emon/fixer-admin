@@ -1,0 +1,89 @@
+<div class="task-details-container">
+  <ng-container *ngIf="task">
+    <h2 class="task-title">{{ task.title }}</h2>
+    <div class="task-info">
+      <p><strong>Task ID:</strong> {{ task.task_id }}</p>
+      <p><strong>Client ID:</strong> {{ task.client_id }}</p>
+      <p><strong>Fixer ID:</strong> {{ task.fixer_id }}</p>
+      <p><strong>Description:</strong> {{ task.description }}</p>
+      <p><strong>Location:</strong> {{ task.location }}</p>
+      <p><strong>City:</strong> {{ task.city }}</p>
+      <p><strong>Status:</strong> {{ task.status }}</p>
+      <p><strong>Service Cost:</strong> ${{ task.serviceCost }}</p>
+      <p><strong>Apparatus Cost:</strong> ${{ task.apparatusCost }}</p>
+      <p><strong>Estimated Duration:</strong> {{ task.estimatedDuration }}</p>
+      <p>
+        <strong>Scheduled Date:</strong> {{ task.date | date : "longDate" }}
+      </p>
+      <p><strong>Scheduled Time:</strong> {{ task.time }}</p>
+      <p>
+        <strong>Created At:</strong> {{ task.created_at | date : "medium" }}
+      </p>
+      <p *ngIf="task.finishedDate">
+        <strong>Finished At:</strong> {{ task.finishedDate | date : "medium" }}
+      </p>
+    </div>
+
+    <h3 class="media-title">Media</h3>
+    <div class="media-list">
+      <div class="media-item" *ngFor="let media of task.media">
+        <ng-container *ngIf="media.type === 'image'">
+          <img [src]="media.location" [alt]="media.name" class="media-image" />
+        </ng-container>
+        <ng-container *ngIf="media.type === 'video'">
+          <video controls class="media-video">
+            <source [src]="media.location" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </ng-container>
+      </div>
+    </div>
+
+    <h3 class="proposals-title">Proposals</h3>
+    <div class="proposals-list">
+      <div class="proposal-item" *ngFor="let proposal of task.proposals">
+        <p><strong>Proposal ID:</strong> {{ proposal.proposalId }}</p>
+        <p><strong>Fixer ID:</strong> {{ proposal.fixerId }}</p>
+        <p><strong>Service Cost:</strong> ${{ proposal.serviceCost }}</p>
+        <p><strong>Apparatus Cost:</strong> ${{ proposal.apparatusCost }}</p>
+        <p>
+          <strong>Estimated Duration:</strong> {{ proposal.estimatedDuration }}
+        </p>
+        <p>
+          <strong>Proposal Date:</strong>
+          {{ proposal.proposalDate | date : "medium" }}
+        </p>
+        <p><strong>Status:</strong> {{ proposal.proposalStatus }}</p>
+        <hr />
+      </div>
+    </div>
+
+    <h3 class="active-proposal-title">Active Proposal</h3>
+    <div class="active-proposal">
+      <p><strong>Proposal ID:</strong> {{ task.activeProposal.proposalId }}</p>
+      <p><strong>Fixer ID:</strong> {{ task.activeProposal.fixerId }}</p>
+      <p>
+        <strong>Service Cost:</strong> ${{ task.activeProposal.serviceCost }}
+      </p>
+      <p>
+        <strong>Apparatus Cost:</strong> ${{
+          task.activeProposal.apparatusCost
+        }}
+      </p>
+      <p>
+        <strong>Estimated Duration:</strong>
+        {{ task.activeProposal.estimatedDuration }}
+      </p>
+      <p>
+        <strong>Total Budget:</strong> ${{ task.activeProposal.totalBudget }}
+      </p>
+      <p>
+        <strong>Proposal Date:</strong>
+        {{ task.activeProposal.proposalDate | date : "medium" }}
+      </p>
+      <p><strong>Status:</strong> {{ task.activeProposal.proposalStatus }}</p>
+    </div>
+
+    <!-- <button class="back-button" (click)="goBack()">Back</button> -->
+  </ng-container>
+</div>

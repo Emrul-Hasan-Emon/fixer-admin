@@ -17,6 +17,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TaskDetailsComponent } from './components/task-details/task-details.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     WelcomeComponent,
     HeaderComponent,
     FooterComponent,
-    ClientDetailsComponent
+    ClientDetailsComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,
