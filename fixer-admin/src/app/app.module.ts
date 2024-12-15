@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
+import { FixerDetailsComponent } from './components/fixer-details/fixer-details.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { TaskDetailsComponent } from './components/task-details/task-details.com
     HeaderComponent,
     FooterComponent,
     ClientDetailsComponent,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+    FixerDetailsComponent
   ],
   imports: [
     BrowserModule,
