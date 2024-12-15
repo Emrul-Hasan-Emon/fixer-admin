@@ -10,6 +10,7 @@ import { TaskComponent } from './components/task/task.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
+import { FixerDetailsComponent } from './components/fixer-details/fixer-details.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,9 @@ const routes: Routes = [
   },
   {
     path: "task-details", component: TaskDetailsComponent
+  },
+  {
+    path: "fixer-details", component: FixerDetailsComponent
   }
 ];
 
