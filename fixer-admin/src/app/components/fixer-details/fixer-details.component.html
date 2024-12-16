@@ -1,1 +1,54 @@
-<p>fixer-details works!</p>
+<div class="fixer-details-container">
+    <ng-container *ngIf="fixer">
+      <h2 class="fixer-title"> {{ getFullName(fixer) }}</h2>
+      <div class="fixer-info">
+        <p><strong>Fixer ID:</strong> {{ fixer.fixer_id }}</p>
+        <p><strong>Phone Number ID:</strong> {{ fixer.phone_number }}</p>
+        <p><strong>Date of Birth:</strong> {{ fixer.dob| date: 'longDate' }}</p>
+        <p><strong>City:</strong> {{ fixer.city }}</p>
+        <p><strong>Gender:</strong> {{ fixer.gender }}</p>
+        <p><strong>Registered At:</strong> {{ fixer.created_at | date: 'longDate' }}</p>
+      </div>
+  
+      <h3 class="media-title">Images</h3>
+      <div class="media-list">
+        <div class="media-item" *ngFor="let media of fixer.profile_image">
+            <img [src]="media[0]" [alt]="'Profile Image'" class="media-image" />
+        </div>
+        <div class="media-item" *ngFor="let media of fixer.cnic_front">
+            <img [src]="media[0]" [alt]="'NID Front Side Image'" class="media-image" />
+        </div>
+        <div class="media-item" *ngFor="let media of fixer.cnic_back">
+            <img [src]="media[0]" [alt]="'NID Back Side Image'" class="media-image" />
+        </div>
+        <div class="media-item" *ngFor="let media of fixer.certificates_image">
+            <img [src]="media[0]" [alt]="'Certificates Images'" class="media-image" />
+        </div>
+      </div>
+  
+      <h3 class="proposals-title">Proposals</h3>
+      <div class="proposals-list">
+        <div class="proposal-item" *ngFor="let proposal of proposals">
+          <p><strong>Proposal ID:</strong> {{ proposal.proposalId }}</p>
+          <p><strong>Service Cost:</strong> ${{ proposal.service_cost }}</p>
+          <p><strong>Apparatus Cost:</strong> ${{ proposal.apparatus_cost }}</p>
+          <p>
+            <strong>Estimated Duration:</strong> {{ proposal.estimated_duration }}
+          </p>
+          <p>
+            <strong>Proposal Date:</strong>
+            {{ proposal.date | date : "medium" }}
+          </p>
+          <p>
+            <strong>Proposal Date:</strong>
+            {{ proposal.time | date : "medium" }}
+          </p>
+          <p><strong>Status:</strong> {{ proposal.status }}</p>
+          <button class="proposal-details-button" (click)="seeTaskDetails(proposal)">See Task Details</button>
+          <hr />
+        </div>
+      </div>
+      <!-- <button class="back-button" (click)="goBack()">Back</button> -->
+    </ng-container>
+  </div>
+  
