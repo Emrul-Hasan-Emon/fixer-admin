@@ -39,8 +39,6 @@ export class ClientsComponent implements OnInit {
     if (clients.message) {
       if (clients.message == 'Client Information found') {
         this.clients = clients.data;
-        console.log('');
-        console.log('Clients: ', this.clients);
       } else {
         this.clients = [];
       }
