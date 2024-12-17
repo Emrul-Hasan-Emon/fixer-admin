@@ -1,1 +1,19 @@
-<p>new-fixers works!</p>
+<div class="fixers-container">
+    <h2 class="title">Newly Registered Fixers</h2>
+    <div class="fixers-list">
+        <ng-container *ngIf="fixers">
+            <div class="fixer-card" *ngFor="let fixer of fixers">
+                <div class="fixer-info">
+                    <p class="fixer-id"><b>Fixer ID</b>: {{ fixer.fixer_id }}</p>
+                    <p class="fixer-name"><b>Name</b>: {{ getFullName(fixer) }}</p>
+                    <p class="fixer-city"><b>City</b>: {{ fixer.city }} </p>
+                    <p class="fixer-gender"><b>Gender</b>: {{ fixer.gender }}</p>
+                </div>
+                <button class="details-button" (click)="seeDetails(fixer)">See Details</button>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="fixers.length == 0">
+            <h3>No new fixers found</h3>
+        </ng-container>
+    </div>
+</div>
