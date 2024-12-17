@@ -39,6 +39,7 @@ export class RegisteredFixersComponent implements OnInit {
   }
 
   seeDetails(fixer: Fixer) {
+    this.fixerService.triggerEventForNewFixer(false);
     this.fixerService.publishFixerDetails(fixer);
     this.router.navigate(['fixer-details']);
   }
