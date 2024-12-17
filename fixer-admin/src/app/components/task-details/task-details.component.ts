@@ -14,9 +14,6 @@ export class TaskDetailsComponent implements OnInit {
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
-    console.log('');
-    console.log('Task Details Component');
-    
     this.fetchTaskDetails();
   }
 
