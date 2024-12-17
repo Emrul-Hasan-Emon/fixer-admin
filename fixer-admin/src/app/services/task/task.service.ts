@@ -7,7 +7,8 @@ import { Task, TaskResponse } from 'src/app/models/task';
   providedIn: 'root'
 })
 export class TaskService {
-    public taskDetails =  new BehaviorSubject<any>(null);
+  public taskDetails =  new BehaviorSubject<any>(null);
+
   constructor(
     private http: HttpClient
   ) { }
