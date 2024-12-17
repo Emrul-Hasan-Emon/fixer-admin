@@ -15,6 +15,7 @@ import { TaskService } from 'src/app/services/task/task.service';
 export class FixerDetailsComponent implements OnInit {
   fixer: Fixer | undefined = undefined;
   proposals: Proposal[] = [];
+  isNewFixer: boolean = false;
 
   constructor(
     private fixerService: FixerService,
@@ -25,6 +26,18 @@ export class FixerDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.fetchFixerDetails();
+    this.checkIfNewFixer();
+  }
+
+  private checkIfNewFixer() {
+    this.fixerService.getEventForNewFixer().subscribe(
+      (yes: any) => {
+        this.isNewFixer = yes;
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
   }
 
   private fetchFixerDetails() {
@@ -73,5 +86,35 @@ export class FixerDetailsComponent implements OnInit {
         alert('An error occured while fetching task details');
       }
     )
+  }
+
+  public approveFixer(fixer: Fixer) {
+    const confirmed = window.confirm("Are you sure you want to approve this fixer?");
+    if (confirmed) {
+      this.fixerService.approveNewFixer(fixer.fixer_id).subscribe(
+        (data: any) => {
+          if (data.message) {
+            if (data.message == 'Fixer is registered') {
+              this.router.navigate(['new-fixers']);
+            }
+          }
+        }
+      );
+    }
+  }
+  
+  public declineFixer(fixer: Fixer) {
+    const confirmed = window.confirm("Are you sure you want to decline this fixer?");
+    if (confirmed) {
+      this.fixerService.declineFixer(fixer.fixer_id).subscribe(
+        (data: any) => {
+          if (data.message) {
+            if (data.message == 'Fixer is declined') {
+              this.router.navigate(['new-fixers']);
+            }
+          }
+        }
+      );
+    }
   }
 }
