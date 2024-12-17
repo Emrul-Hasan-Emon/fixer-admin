@@ -40,6 +40,7 @@ export class NewFixersComponent implements OnInit {
   }
 
   seeDetails(fixer: Fixer) {
+    this.fixerService.triggerEventForNewFixer(true);
     this.fixerService.publishFixerDetails(fixer);
     this.router.navigate(['fixer-details']);
   }
