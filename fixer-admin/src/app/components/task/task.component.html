@@ -1,1 +1,13 @@
-<p>task works!</p>
+<div class="task-container">
+    <h2 class="title">Tasks</h2>
+    <div class="task-list">
+        <div class="task-card" *ngFor="let task of tasks">
+            <div class="task-info">
+                <p class="task-id"><b>Task ID</b>: {{ task.task_id }}</p>
+                <p class="task-name"><b>Task Title: </b>: {{ task.title }}</p>
+                <p class="task-city"><b>City</b>: {{ task.city }} </p>
+            </div>
+            <button class="details-button" (click)="seeTaskDetails(task)">See Details</button>
+        </div>
+    </div>
+</div>
