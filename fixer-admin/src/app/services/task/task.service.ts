@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Task, TaskResponse } from 'src/app/models/task';
 
 @Injectable({
@@ -21,6 +21,13 @@ export class TaskService {
 
   public getAllTasks(): Observable<TaskResponse> {
     return this.http.get<TaskResponse>('/admin/task/all-tasks-details');
+  }
+
+  public getSpecificTaskDetails(taskId: string): Observable<any> {
+    const payload = {
+      task_id: taskId
+    };
+    return this.http.post('/admin/task/single-tasks-details', payload);
   }
 
   public publishTaskDetails(taskDetails: Task) {
