@@ -40,8 +40,8 @@
             {{ proposal.date | date : "medium" }}
           </p>
           <p>
-            <strong>Proposal Date:</strong>
-            {{ proposal.time | date : "medium" }}
+            <strong>Proposal <Time></Time>:</strong>
+            {{ proposal.time }}
           </p>
           <p><strong>Status:</strong> {{ proposal.status }}</p>
           <button class="proposal-details-button" (click)="seeTaskDetails(proposal)">See Task Details</button>
