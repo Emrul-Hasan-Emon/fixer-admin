@@ -7,7 +7,7 @@ export interface Fixer {
   city: string;
   gender: string;
   created_at: string;
-  category_id: string;
+  category_id: string[];
   cnic_front: string[];
   cnic_back: string[];
   profile_image: string[];
