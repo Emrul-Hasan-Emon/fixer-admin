@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,16 +12,31 @@ export class LoginComponent {
   rememberMe: boolean = false;
   showPassword: boolean = false;
 
+  constructor(private loginService: LoginService) {}
+
   togglePassword() {  // Add this method
     this.showPassword = !this.showPassword;
   }
   
   onSubmit() {
-    // Handle login logic here
-    console.log({
-      username: this.username,
-      password: this.password,
-      rememberMe: this.rememberMe
-    });
+    console.log('');
+    console.log('Username: ', this.username);
+    console.log('Password: ', this.password);
+    
+    this.loginService.login(this.username, this.password).subscribe(
+      (data: any) => {
+        if (data.message) {
+          if (data.message == 'success') {
+            this.loginService.emitLogin(true);
+          } else {
+            this.loginService.emitLogin(false);
+          }
+        }
+      },
+      (error) => {
+        console.error(error);
+        alert('An error occured while login');
+      }
+    )
   }
 }

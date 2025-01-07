@@ -6,7 +6,8 @@
             <span class="brand-name">Fixer Admin</span>
         </div>
         <div class="auth-section">
-            <button class="login-btn" (click)="navigateToLoginPage()">Login</button>
+            <button class="login-btn" *ngIf="!isLogin" (click)="navigateToLoginPage()">Login</button>
+            <button class="login-btn" *ngIf="isLogin" (click)="navigateToLogoutPage()">Logout</button>
         </div>
     </nav>
 </header>
