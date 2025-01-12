@@ -13,16 +13,16 @@
     <h3 class="media-title">Images</h3>
     <div class="media-list">
       <div class="media-item" *ngFor="let media of fixer.profile_image">
-        <img [src]="media[0]" [alt]="'Profile Image'" class="media-image" />
+        <img [src]="media" [alt]="'Profile Image'" class="media-image" />
       </div>
       <div class="media-item" *ngFor="let media of fixer.cnic_front">
-        <img [src]="media[0]" [alt]="'NID Front Side Image'" class="media-image" />
+        <img [src]="media" [alt]="'NID Front Side Image'" class="media-image" />
       </div>
       <div class="media-item" *ngFor="let media of fixer.cnic_back">
-        <img [src]="media[0]" [alt]="'NID Back Side Image'" class="media-image" />
+        <img [src]="media" [alt]="'NID Back Side Image'" class="media-image" />
       </div>
       <div class="media-item" *ngFor="let media of fixer.certificates_image">
-        <img [src]="media[0]" [alt]="'Certificates Images'" class="media-image" />
+        <img [src]="media" [alt]="'Certificates Images'" class="media-image" />
       </div>
     </div>
 
