@@ -24,6 +24,7 @@ import { LocationComponent } from './components/location/location.component';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { LocationAddComponent } from './components/location-add/location-add.component';
 import { SliderImagesComponent } from './components/slider-images/slider-images.component';
+import { ImageAddComponent } from './components/image-add/image-add.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { SliderImagesComponent } from './components/slider-images/slider-images.
     LocationComponent,
     CategoryAddComponent,
     LocationAddComponent,
-    SliderImagesComponent
+    SliderImagesComponent,
+    ImageAddComponent
   ],
   imports: [
     BrowserModule,
