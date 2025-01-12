@@ -22,6 +22,7 @@ import { FixerDetailsComponent } from './components/fixer-details/fixer-details.
 import { CategoryComponent } from './components/category/category.component';
 import { LocationComponent } from './components/location/location.component';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
+import { LocationAddComponent } from './components/location-add/location-add.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { CategoryAddComponent } from './components/category-add/category-add.com
     FixerDetailsComponent,
     CategoryComponent,
     LocationComponent,
-    CategoryAddComponent
+    CategoryAddComponent,
+    LocationAddComponent
   ],
   imports: [
     BrowserModule,
