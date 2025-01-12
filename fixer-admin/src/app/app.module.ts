@@ -19,6 +19,8 @@ import { ClientDetailsComponent } from './components/client-details/client-detai
 import { HttpClientModule } from '@angular/common/http';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
 import { FixerDetailsComponent } from './components/fixer-details/fixer-details.component';
+import { CategoryComponent } from './components/category/category.component';
+import { LocationComponent } from './components/location/location.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { FixerDetailsComponent } from './components/fixer-details/fixer-details.
     FooterComponent,
     ClientDetailsComponent,
     TaskDetailsComponent,
-    FixerDetailsComponent
+    FixerDetailsComponent,
+    CategoryComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
