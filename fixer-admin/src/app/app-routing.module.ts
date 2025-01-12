@@ -14,6 +14,7 @@ import { FixerDetailsComponent } from './components/fixer-details/fixer-details.
 import { CategoryComponent } from './components/category/category.component';
 import { LocationComponent } from './components/location/location.component';
 import { SliderImagesComponent } from './components/slider-images/slider-images.component';
+import { ImageAddComponent } from './components/image-add/image-add.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,9 @@ const routes: Routes = [
   },
   {
     path: "slider", component: SliderImagesComponent
+  },
+  {
+    path: "image-add", component: ImageAddComponent
   }
 ];
 
