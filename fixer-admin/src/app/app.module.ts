@@ -21,6 +21,7 @@ import { TaskDetailsComponent } from './components/task-details/task-details.com
 import { FixerDetailsComponent } from './components/fixer-details/fixer-details.component';
 import { CategoryComponent } from './components/category/category.component';
 import { LocationComponent } from './components/location/location.component';
+import { CategoryAddComponent } from './components/category-add/category-add.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { LocationComponent } from './components/location/location.component';
     TaskDetailsComponent,
     FixerDetailsComponent,
     CategoryComponent,
-    LocationComponent
+    LocationComponent,
+    CategoryAddComponent
   ],
   imports: [
     BrowserModule,
