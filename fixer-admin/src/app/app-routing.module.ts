@@ -11,6 +11,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
 import { FixerDetailsComponent } from './components/fixer-details/fixer-details.component';
+import { CategoryComponent } from './components/category/category.component';
+import { LocationComponent } from './components/location/location.component';
 
 const routes: Routes = [
   {
@@ -45,6 +47,12 @@ const routes: Routes = [
   },
   {
     path: "fixer-details", component: FixerDetailsComponent
+  },
+  {
+    path: "category", component: CategoryComponent
+  },
+  {
+    path: "location", component: LocationComponent
   }
 ];
 
