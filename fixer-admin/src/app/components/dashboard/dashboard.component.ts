@@ -39,6 +39,18 @@ export class DashboardComponent {
       title: 'Tasks',
       route: 'tasks',
       description: 'Monitor and manage all tasks'
+    },
+    {
+      icon: 'clipboard-list',
+      title: 'Category',
+      route: 'category',
+      description: 'Monitor and manage Categories'
+    },
+    {
+      icon: 'clipboard-list',
+      title: 'Location',
+      route: 'location',
+      description: 'Monitor and manage Locations'
     }
   ];
 
