@@ -13,6 +13,7 @@ import { TaskDetailsComponent } from './components/task-details/task-details.com
 import { FixerDetailsComponent } from './components/fixer-details/fixer-details.component';
 import { CategoryComponent } from './components/category/category.component';
 import { LocationComponent } from './components/location/location.component';
+import { SliderImagesComponent } from './components/slider-images/slider-images.component';
 
 const routes: Routes = [
   {
@@ -53,6 +54,9 @@ const routes: Routes = [
   },
   {
     path: "location", component: LocationComponent
+  },
+  {
+    path: "slider", component: SliderImagesComponent
   }
 ];
 
