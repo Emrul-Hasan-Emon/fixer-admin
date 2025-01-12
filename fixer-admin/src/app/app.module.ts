@@ -23,6 +23,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { LocationComponent } from './components/location/location.component';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { LocationAddComponent } from './components/location-add/location-add.component';
+import { SliderImagesComponent } from './components/slider-images/slider-images.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { LocationAddComponent } from './components/location-add/location-add.com
     CategoryComponent,
     LocationComponent,
     CategoryAddComponent,
-    LocationAddComponent
+    LocationAddComponent,
+    SliderImagesComponent
   ],
   imports: [
     BrowserModule,
