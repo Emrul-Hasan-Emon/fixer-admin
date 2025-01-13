@@ -1,1 +1,15 @@
-<p>location works!</p>
+<div class="location-container">
+    <h2 class="title">Category</h2>
+    <div class="location-list">
+        <div class="location-card" *ngFor="let location of locations">
+            <div class="location-info">
+                <p class="location-id"><b>Location ID</b>: {{ location.location_id }}</p>
+                <p class="location-name"><b>Location Name: </b>: {{ location.location_name }}</p>
+             </div>
+        </div>
+    </div>
+    <!-- Add New Category -->
+    <div class="location-add-action-button">
+        <button class="location-add-button" (click)="addNewLocation()">Add New Location</button>
+      </div>
+</div>
