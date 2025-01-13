@@ -41,6 +41,7 @@ export class FixerDetailsComponent implements OnInit {
   }
 
   private fetchFixerDetails() {
+    console.log('fetching fixer details');
     this.fixerService.getPublishedFixerDetails().subscribe(
       (fixer: Fixer) => {
         if (fixer) {
@@ -93,6 +94,7 @@ export class FixerDetailsComponent implements OnInit {
     if (confirmed) {
       this.fixerService.approveNewFixer(fixer.fixer_id).subscribe(
         (data: any) => {
+          console.log('Approve fixer response:', data);
           if (data.message) {
             if (data.message == 'Fixer is registered') {
               this.router.navigate(['new-fixers']);
