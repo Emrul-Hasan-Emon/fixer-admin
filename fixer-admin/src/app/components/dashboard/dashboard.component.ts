@@ -37,7 +37,7 @@ export class DashboardComponent {
     {
       icon: 'clipboard-list',
       title: 'Tasks',
-      route: 'tasks',
+      route: 'task',
       description: 'Monitor and manage all tasks'
     },
     {
@@ -51,6 +51,12 @@ export class DashboardComponent {
       title: 'Location',
       route: 'location',
       description: 'Monitor and manage Locations'
+    },
+    {
+      icon: 'clipboard-list',
+      title: 'Slide Images',
+      route: 'slider',
+      description: 'Monitor and manage Images'
     }
   ];
 
