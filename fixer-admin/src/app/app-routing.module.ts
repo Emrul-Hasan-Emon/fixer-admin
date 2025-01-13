@@ -39,7 +39,7 @@ const routes: Routes = [
     path: "approved-fixers", component: RegisteredFixersComponent
   },
   {
-    path: "tasks", component: TaskComponent
+    path: "task", component: TaskComponent
   },
   {
     path: "client-details", component: ClientDetailsComponent
