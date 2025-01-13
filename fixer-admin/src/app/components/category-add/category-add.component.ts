@@ -15,7 +15,7 @@ export class CategoryAddComponent {
     private router: Router
   ) {}
 
-  public addNewImage() {
+  public addNewCategory() {
     if (this.category.length !== 0) {
       this.categoryService.addNewCategory(this.category).subscribe(
         (resp: any) => {
