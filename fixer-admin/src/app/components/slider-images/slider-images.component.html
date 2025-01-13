@@ -1,1 +1,15 @@
-<p>slider-images works!</p>
+<div class="image-container">
+    <h2 class="title">Slider Images</h2>
+    <div class="image-list">
+        <div class="image-card" *ngFor="let image of images">
+            <div class="image-info">
+                <p class="image-id"><b>Slider Image ID</b>: {{ image.slider_id }}</p>
+                <p class="image-name"><b>Slider Image URL Name: </b>: {{ image.slider_image }}</p>
+             </div>
+        </div>
+    </div>
+    <!-- Add New Image -->
+    <div class="image-add-action-button">
+        <button class="image-add-button" (click)="addNewImage()">Add New Image</button>
+      </div>
+</div>
