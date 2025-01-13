@@ -81,3 +81,9 @@
     background-color: #218838;
     /* Darker green on hover */
 }
+
+.media-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}

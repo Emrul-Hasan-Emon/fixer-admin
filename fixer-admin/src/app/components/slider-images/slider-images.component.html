@@ -4,7 +4,8 @@
         <div class="image-card" *ngFor="let image of images">
             <div class="image-info">
                 <p class="image-id"><b>Slider Image ID</b>: {{ image.slider_id }}</p>
-                <p class="image-name"><b>Slider Image URL Name: </b>: {{ image.slider_image }}</p>
+                <p class="image-name"><b>Slider Image URL Name</b></p>
+                <img [src]="image.slider_image" [alt]="'Slider Image'" class="media-image" />
              </div>
         </div>
     </div>
