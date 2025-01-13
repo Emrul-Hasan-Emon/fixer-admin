@@ -15,6 +15,8 @@ import { CategoryComponent } from './components/category/category.component';
 import { LocationComponent } from './components/location/location.component';
 import { SliderImagesComponent } from './components/slider-images/slider-images.component';
 import { ImageAddComponent } from './components/image-add/image-add.component';
+import { CategoryAddComponent } from './components/category-add/category-add.component';
+import { LocationAddComponent } from './components/location-add/location-add.component';
 
 const routes: Routes = [
   {
@@ -61,6 +63,12 @@ const routes: Routes = [
   },
   {
     path: "image-add", component: ImageAddComponent
+  },
+  {
+    path: "category-add", component: CategoryAddComponent
+  },
+  {
+    path: "location-add", component: LocationAddComponent
   }
 ];
 
