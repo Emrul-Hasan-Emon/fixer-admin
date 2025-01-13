@@ -3,7 +3,7 @@ export interface SliderImage {
     slider_image: string;
 }
 
-export interface SliderImageImage {
+export interface SliderImageResponse {
     data: SliderImage[];
     message: string;
     role: string;
