@@ -1,1 +1,36 @@
-<p>category-add works!</p>
+<div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <img src="assets/logo.png" alt="TaskFixer Logo" class="login-logo" />
+        <h1>Welcome Back</h1>
+        <p class="subtitle">Add New Category</p>
+      </div>
+  
+      <form class="login-form" (ngSubmit)="addNewImage()">
+        <div class="form-group">
+          <label for="username">New Category</label>
+          <div class="input-container">
+            <i class="bi bi-person"></i>
+            <input
+              type="text"
+              id="category"
+              placeholder="Enter new category"
+              [(ngModel)]="category"
+              name="category"
+              required
+            />
+          </div>
+        </div>
+  
+        <button type="submit" class="login-button">
+          <span>Add</span>
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </form>
+  
+      <div class="login-footer">
+        <p>Having trouble? <a href="#">Contact Support</a></p>
+      </div>
+    </div>
+  </div>
+  
