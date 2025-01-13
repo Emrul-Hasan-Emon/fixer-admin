@@ -1,1 +1,35 @@
-<p>image-add works!</p>
+<div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <img src="assets/logo.png" alt="TaskFixer Logo" class="login-logo" />
+        <h1>Welcome Back</h1>
+        <p class="subtitle">Add New Slider Image</p>
+      </div>
+  
+      <form class="login-form" (ngSubmit)="addNewSliderImage()">
+        <div class="form-group">
+          <label for="image">New Slider Image</label>
+          <div class="input-container">
+            <i class="bi bi-image"></i>
+            <input
+              type="file"
+              id="image"
+              (change)="onFileSelected($event)"
+              accept="image/*"
+              required
+            />
+          </div>
+        </div>
+  
+        <button type="submit" class="login-button" [disabled]="!imageBase64">
+          <span>Add</span>
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </form>
+  
+      <div class="login-footer">
+        <p>Having trouble? <a href="#">Contact Support</a></p>
+      </div>
+    </div>
+  </div>
+  
