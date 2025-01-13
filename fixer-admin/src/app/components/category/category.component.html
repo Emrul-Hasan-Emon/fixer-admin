@@ -1,1 +1,15 @@
-<p>category works!</p>
+<div class="category-container">
+    <h2 class="title">Category</h2>
+    <div class="category-list">
+        <div class="category-card" *ngFor="let category of categories">
+            <div class="category-info">
+                <p class="category-id"><b>Category ID</b>: {{ category.category_id }}</p>
+                <p class="category-name"><b>Category Name: </b>: {{ category.category_name }}</p>
+             </div>
+        </div>
+    </div>
+    <!-- Add New Category -->
+    <div class="category-add-action-button">
+        <button class="category-add-button" (click)="addNewCategory()">Add New Category</button>
+      </div>
+</div>
