@@ -33,10 +33,29 @@ export class SliderImagesComponent implements OnInit {
         console.log(error);
         alert('Error occured while getting images');
       }
-    )
+    );
   }
 
   public addNewImage() {
     this.router.navigate(['image-add']);
+  }
+
+  public deleteSliderImage(sliderId: string) {
+    const confirmed = window.confirm("Are you sure you want to delete this Image?");
+    if (confirmed) {
+      this.sliderImageService.deleteASlider(sliderId).subscribe(
+        (resp: SliderImageResponse) => {
+          if (resp.data) {
+            this.images = resp.data;
+          } else {
+            this.images = [];
+          }
+        },
+        (error) => {
+          console.log(error);
+          alert('Error occured while getting images');
+        }
+      );
+    }
   }
 }
