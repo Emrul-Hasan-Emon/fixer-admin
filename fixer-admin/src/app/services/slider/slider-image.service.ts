@@ -14,6 +14,13 @@ export class SliderImageService {
     return this.http.get<SliderImageResponse>('/admin/slider-image');
   }
 
+  public deleteASlider(sliderId: string): Observable<SliderImageResponse> {
+    const payload = {
+      slider_id: sliderId
+    }
+    return this.http.post<SliderImageResponse>('/admin/slider-delete', payload);
+  }
+
   public addNewSliderImage(slider_image: string): Observable<any> {
     const payload = {
       slider_image: slider_image
