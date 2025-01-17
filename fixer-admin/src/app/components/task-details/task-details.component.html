@@ -85,6 +85,10 @@
         <p><strong>Status:</strong> {{ task.activeProposal.proposalStatus }}</p>
       </div>
     </ng-container>
+   
+    <div class="task-delete">
+      <button class="delete-button" (click)="deleteTask(task.task_id)">Delete Task</button>
+    </div>
 
     <!-- <button class="back-button" (click)="goBack()">Back</button> -->
   </ng-container>

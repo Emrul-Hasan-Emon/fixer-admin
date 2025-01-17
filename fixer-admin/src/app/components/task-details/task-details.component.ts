@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Task } from 'src/app/models/task';
 import { TaskService } from 'src/app/services/task/task.service';
 
@@ -11,7 +12,10 @@ import { TaskService } from 'src/app/services/task/task.service';
 export class TaskDetailsComponent implements OnInit {
   task: Task | undefined = undefined;
   
-  constructor(private taskService: TaskService) {}
+  constructor(
+    private taskService: TaskService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.fetchTaskDetails();
@@ -29,4 +33,18 @@ export class TaskDetailsComponent implements OnInit {
     )
   }
 
+  public deleteTask(taskId: string) {
+    const confirmed = window.confirm("Are you sure you want to delete this Task?");
+    if (confirmed) {
+      this.taskService.deleteTask(taskId).subscribe(
+        (resp: any) => {
+          this.router.navigate(['task']);
+        },
+        (error) => {
+          console.log(error);
+          alert('An unexpected error occured while deleting task details');
+        }
+      )
+    }
+  }
 }
