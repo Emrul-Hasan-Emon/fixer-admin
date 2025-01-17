@@ -4,12 +4,14 @@
         <div class="category-card" *ngFor="let category of categories">
             <div class="category-info">
                 <p class="category-id"><b>Category ID</b>: {{ category.category_id }}</p>
-                <p class="category-name"><b>Category Name: </b>: {{ category.category_name }}</p>
-             </div>
+                <p class="category-name"><b>Category Name</b>: {{ category.category_name }}</p>
+            </div>
+            <!-- Add delete button -->
+            <button class="delete-button" (click)="deleteCategory(category.category_id)">Delete</button>
         </div>
     </div>
     <!-- Add New Category -->
     <div class="category-add-action-button">
         <button class="category-add-button" (click)="addNewCategory()">Add New Category</button>
-      </div>
+    </div>
 </div>

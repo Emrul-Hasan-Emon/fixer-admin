@@ -39,4 +39,23 @@ export class CategoryComponent implements OnInit {
   public addNewCategory() {
     this.router.navigate(['category-add']);
   }
+
+  public deleteCategory(categoryId: string) {
+    const confirmed = window.confirm("Are you sure you want to delete this Category?");
+    if (confirmed) {
+      this.categoryService.deleteACategory(categoryId).subscribe(
+        (resp: CategoryResponse) => {
+          if (resp.data) {
+            this.categories = resp.data;
+          } else {
+            this.categories = [];
+          }
+        },
+        (error) => {
+          console.log(error);
+          alert('An error occured while fetching all categories');
+        }
+      )
+    }    
+  }
 }
