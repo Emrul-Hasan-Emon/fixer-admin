@@ -14,6 +14,13 @@ export class LocationService {
     return this.http.get<LocationResponse>('/admin/location');
   }
 
+  public deleteALocation(locationId: string): Observable<LocationResponse> {
+    const payload = {
+      location_id: locationId
+    }
+    return this.http.post<LocationResponse>('/admin/location-delete', payload);
+  }
+
   public addNewLocations(location: string): Observable<any> {
     const payload = {
       location: location
