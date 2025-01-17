@@ -14,6 +14,13 @@ export class CategoryService {
     return this.http.get<CategoryResponse>('/admin/category');
   }
 
+  public deleteACategory(categoryId: string): Observable<CategoryResponse> {
+    const payload = {
+      category_id: categoryId
+    }
+    return this.http.post<CategoryResponse>('/admin/category-delete', payload);
+  }
+
   public addNewCategory(category: string): Observable<any> {
     const payload = {
       category: category
