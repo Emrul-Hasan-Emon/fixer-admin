@@ -6,6 +6,7 @@
                 <p class="location-id"><b>Location ID</b>: {{ location.location_id }}</p>
                 <p class="location-name"><b>Location Name: </b>: {{ location.location_name }}</p>
              </div>
+             <button class="delete-button" (click)="deleteLocation(location.location_id)">Delete</button>
         </div>
     </div>
     <!-- Add New Category -->

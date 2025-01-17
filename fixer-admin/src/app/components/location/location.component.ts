@@ -33,10 +33,29 @@ export class LocationComponent implements OnInit {
         console.log(error);
         alert('An error occured while getting locations');
       }
-    )
+    );
   }
 
   public addNewLocation() {
     this.router.navigate(['location-add']);
+  }
+
+  public deleteLocation(locationId: string) {
+    const confirmed = window.confirm("Are you sure you want to delete this Location?");
+    if (confirmed) {
+      this.locationService.deleteALocation(locationId).subscribe(
+        (resp: LocationResponse) => {
+          if (resp.data) {
+            this.locations = resp.data;
+          } else {
+            this.locations = [];
+          }
+        },
+        (error) => {
+          console.log(error);
+          alert('An error occured while getting locations');
+        }
+      );
+    }
   }
 }
