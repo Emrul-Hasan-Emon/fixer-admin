@@ -58,31 +58,33 @@
       </div>
     </div>
 
-    <h3 class="active-proposal-title">Active Proposal</h3>
-    <div class="active-proposal">
-      <p><strong>Proposal ID:</strong> {{ task.activeProposal.proposalId }}</p>
-      <p><strong>Fixer ID:</strong> {{ task.activeProposal.fixerId }}</p>
-      <p>
-        <strong>Service Cost:</strong> ${{ task.activeProposal.serviceCost }}
-      </p>
-      <p>
-        <strong>Apparatus Cost:</strong> ${{
+    <ng-container *ngIf="task.activeProposal">
+      <h3 class="active-proposal-title">Active Proposal</h3>
+      <div class="active-proposal">
+        <p><strong>Proposal ID:</strong> {{ task.activeProposal.proposalId }}</p>
+        <p><strong>Fixer ID:</strong> {{ task.activeProposal.fixerId }}</p>
+        <p>
+          <strong>Service Cost:</strong> ${{ task.activeProposal.serviceCost }}
+        </p>
+        <p>
+          <strong>Apparatus Cost:</strong> ${{
           task.activeProposal.apparatusCost
-        }}
-      </p>
-      <p>
-        <strong>Estimated Duration:</strong>
-        {{ task.activeProposal.estimatedDuration }}
-      </p>
-      <p>
-        <strong>Total Budget:</strong> ${{ task.activeProposal.totalBudget }}
-      </p>
-      <p>
-        <strong>Proposal Date:</strong>
-        {{ task.activeProposal.proposalDate | date : "medium" }}
-      </p>
-      <p><strong>Status:</strong> {{ task.activeProposal.proposalStatus }}</p>
-    </div>
+          }}
+        </p>
+        <p>
+          <strong>Estimated Duration:</strong>
+          {{ task.activeProposal.estimatedDuration }}
+        </p>
+        <p>
+          <strong>Total Budget:</strong> ${{ task.activeProposal.totalBudget }}
+        </p>
+        <p>
+          <strong>Proposal Date:</strong>
+          {{ task.activeProposal.proposalDate | date : "medium" }}
+        </p>
+        <p><strong>Status:</strong> {{ task.activeProposal.proposalStatus }}</p>
+      </div>
+    </ng-container>
 
     <!-- <button class="back-button" (click)="goBack()">Back</button> -->
   </ng-container>
