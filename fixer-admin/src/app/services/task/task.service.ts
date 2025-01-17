@@ -31,6 +31,13 @@ export class TaskService {
     return this.http.post('/admin/task/single-tasks-details', payload);
   }
 
+  public deleteTask(taskId: any): Observable<any> {
+    const payload = {
+      task_id: taskId
+    }
+    return this.http.post('/admin/task/delete-single-task', payload);
+  }
+
   public publishTaskDetails(taskDetails: Task) {
     this.taskDetails.next(taskDetails);
   }
