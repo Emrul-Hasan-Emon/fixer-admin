@@ -1,6 +1,6 @@
 {
   "/admin": {
-    "target": "http://localhost:8080/api/",
+    "target": "https://www.adminfixerpp.pk/api/",
     "secure": false,
     "logLevel":	"debug",
     "changeOrigin":	true
