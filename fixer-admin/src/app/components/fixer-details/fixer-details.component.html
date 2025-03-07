@@ -10,6 +10,13 @@
       <p><strong>Registered At:</strong> {{ fixer.created_at | date: 'longDate' }}</p>
     </div>
 
+    <h3 class="category-title">Categories</h3>
+    <div class="category-list">
+      <div class="category-item" *ngFor="let c of fixer.category_id">
+        <p><strong>{{ c }}</strong></p>
+      </div>
+    </div>
+
     <h3 class="media-title">Images</h3>
     <div class="media-list">
       <div class="media-item" *ngFor="let media of fixer.profile_image">
@@ -25,14 +32,14 @@
         <img [src]="media" [alt]="'Certificates Images'" class="media-image" />
       </div>
     </div>
-    Category
+    {{ 'Category' }}
     {{ fixer.category_id }}
-    <h3 class="category-title">Categories</h3>
+    <!-- <h3 class="category-title">Categories</h3>
     <div class="category-list">
       <div class="category-item" *ngFor="let c of fixer.category_id">
         <p><strong>{{ c }}</strong></p>
       </div>
-    </div>
+    </div> -->
     <!-- <div class="proposals-list">
       <div class="proposal-item" *ngFor="let c of fixer.category_id">
         <p><strong>{{ c }}</strong></p>
