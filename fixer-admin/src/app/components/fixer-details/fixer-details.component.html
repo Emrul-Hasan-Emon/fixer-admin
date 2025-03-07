@@ -8,6 +8,7 @@
       <p><strong>City:</strong> {{ fixer.city }}</p>
       <p><strong>Gender:</strong> {{ fixer.gender }}</p>
       <p><strong>Registered At:</strong> {{ fixer.created_at | date: 'longDate' }}</p>
+      <p><strong>Categories: {{ fixer.category_id }} </strong></p>
     </div>
 
     <h3 class="category-title">Categories</h3>
@@ -32,8 +33,8 @@
         <img [src]="media" [alt]="'Certificates Images'" class="media-image" />
       </div>
     </div>
-    {{ 'Category' }}
-    {{ fixer.category_id }}
+    <!-- {{ 'Category' }}
+    {{ fixer.category_id }} -->
     <!-- <h3 class="category-title">Categories</h3>
     <div class="category-list">
       <div class="category-item" *ngFor="let c of fixer.category_id">
