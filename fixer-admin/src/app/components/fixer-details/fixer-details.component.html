@@ -25,12 +25,13 @@
         <img [src]="media" [alt]="'Certificates Images'" class="media-image" />
       </div>
     </div>
-    <h3 class="proposals-title">Categories</h3>
+    {{ fixer.category_id }}
+    <!-- <h3 class="proposals-title">Categories</h3>
     <div class="proposals-list">
       <div class="proposal-item" *ngFor="let c of fixer.category_id">
         <p><strong>{{ c }}</strong></p>
       </div>
-    </div>
+    </div> -->
     <!-- <div class="proposals-list">
       <div class="proposal-item" *ngFor="let c of fixer.category_id">
         <p><strong>{{ c }}</strong></p>
