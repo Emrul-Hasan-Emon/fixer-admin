@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Fixer } from 'src/app/models/fixer';
+import { Payment } from 'src/app/models/payment';
 import { Proposal, ProposalResponse } from 'src/app/models/proposal';
 import { FixerService } from 'src/app/services/fixer/fixer.service';
+import { PaymentService } from 'src/app/services/payment/payment.service';
 import { ProposalService } from 'src/app/services/proposal/proposal.service';
 import { TaskService } from 'src/app/services/task/task.service';
 
@@ -21,6 +23,7 @@ export class FixerDetailsComponent implements OnInit {
     private fixerService: FixerService,
     private proposalService: ProposalService,
     private taskService: TaskService,
+    private paymentService: PaymentService,
     private router: Router
   ) {}
 
@@ -46,6 +49,9 @@ export class FixerDetailsComponent implements OnInit {
       (fixer: Fixer) => {
         if (fixer) {
           this.fixer = fixer;
+          console.log('');
+          console.log('Fixer: ', fixer);
+          
           this.fetchProposalsForTheFixer(fixer.fixer_id);
         }
       },
@@ -118,5 +124,21 @@ export class FixerDetailsComponent implements OnInit {
         }
       );
     }
+  }
+
+  public checkPaymentStatus(payment: Payment) {
+    this.paymentService.checkPaymentStatus(payment).subscribe(
+      (data) => {
+        if (data.pp_PaymentResponseCode) {
+          if (data.pp_PaymentResponseCode === "121") {
+            alert('The amount is debited successfully');
+          } else {
+            alert('The amount could not debited successfully');
+          }
+        } else {
+          alert('Something went error');
+        }
+      }
+    )
   }
 }
