@@ -1,3 +1,5 @@
+import { Payment } from "./payment";
+
 export interface Fixer {
   fixer_id: string;
   phone_number: string;
@@ -12,6 +14,7 @@ export interface Fixer {
   cnic_back: string[];
   profile_image: string[];
   certificates_image: string[];
+  payments: Payment[];
 }
 
 export interface FixerResponse {
