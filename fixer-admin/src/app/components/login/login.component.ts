@@ -19,10 +19,6 @@ export class LoginComponent {
   }
   
   onSubmit() {
-    console.log('');
-    console.log('Username: ', this.username);
-    console.log('Password: ', this.password);
-    
     this.loginService.login(this.username, this.password).subscribe(
       (data: any) => {
         if (data.message) {
