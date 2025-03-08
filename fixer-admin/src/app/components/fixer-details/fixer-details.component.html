@@ -69,6 +69,17 @@
       </div>
     </div>
 
+    <h3 class="proposals-title">Payments</h3>
+    <div class="proposals-list">
+      <div class="proposal-item" *ngFor="let payment of fixer.payments">
+        <p><strong>Payment ID: </strong> {{ payment.payment_id }}</p>
+        <p><strong>Amount: </strong> {{ payment.ppAmount }}</p>
+        <p><strong>Description: </strong> {{ payment.ppDescription }} </p>
+        <button class="proposal-details-button" (click)="checkPaymentStatus(payment)">Check Payment Status</button>
+        <hr/>
+      </div>
+    </div>
+
     <!-- New Approve and Decline Buttons -->
     <div class="fixer-action-buttons" *ngIf="isNewFixer">
       <button class="approve-button" (click)="approveFixer(fixer)">Approve Fixer</button>
