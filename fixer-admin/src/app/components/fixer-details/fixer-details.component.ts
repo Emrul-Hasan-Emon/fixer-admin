@@ -136,7 +136,7 @@ export class FixerDetailsComponent implements OnInit {
             alert('The amount could not debited successfully');
           }
         } else {
-          alert('Something went error');
+          alert(data['pp_ResponseMessage']);
         }
       }
     )
